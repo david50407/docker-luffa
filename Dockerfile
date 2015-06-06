@@ -16,6 +16,9 @@ RUN pip install -r /luffa/requirements.txt
 # Set the application path as working directory
 WORKDIR /luffa
 
+# Expose 80 port
+EXPOSE 80
+
 # Run the server on 80 port
 ENTRYPOINT /usr/local/bin/gunicorn luffa:application -b :80
 CMD ["-c"]
